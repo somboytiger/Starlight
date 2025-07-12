@@ -283,10 +283,13 @@ const MusicPlay: ServiceExecute = {
 					],
 				});
 				if (!player.queue || !player.queue.current) {
+					player.queue.add(track)
 					await player.play()
+				} else {
+					player.queue.add(track)
 				}
-				break;
 			}
+				break;
 		}
 	},
 };
